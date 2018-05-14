@@ -470,7 +470,7 @@ func PipelineTemplateConvertAction(clientConfig spinnaker.ClientConfig) cli.Acti
 			return errors.Wrap(err, "marshaling template to YAML")
 		}
 
-		ioutil.WriteFile("/Users/s02294/go/src/github.com/KeisukeYamashita/roer/var/templates"+pipelineConfigID+".yml", template, os.ModePerm)
+		ioutil.WriteFile("/Users/s02294/go/src/github.com/KeisukeYamashita/roer/var/templates/"+pipelineConfigID+".yml", template, os.ModePerm)
 
 		logrus.Info(generatedTemplateHeader)
 		logrus.Info(string(template))
