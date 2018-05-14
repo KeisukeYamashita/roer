@@ -14,3 +14,6 @@ build
 
 .vscode
 .idea
+
+# Template ymls
+/var
