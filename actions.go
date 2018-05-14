@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
+	"os"
 	"time"
 
 	"github.com/ghodss/yaml"
@@ -468,6 +469,8 @@ func PipelineTemplateConvertAction(clientConfig spinnaker.ClientConfig) cli.Acti
 		if err != nil {
 			return errors.Wrap(err, "marshaling template to YAML")
 		}
+
+		ioutil.WriteFile("/Users/s02294/go/src/github.com/KeisukeYamashita/roer/var/templates"+pipelineConfigID+".yml", template, os.ModePerm)
 
 		logrus.Info(generatedTemplateHeader)
 		logrus.Info(string(template))
